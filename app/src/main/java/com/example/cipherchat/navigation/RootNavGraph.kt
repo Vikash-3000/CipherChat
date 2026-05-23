@@ -35,6 +35,10 @@ fun RootNavGraph() {
 
             SignupScreen(
 
+                onSignupSuccess = {
+                    navController.popBackStack()
+                },
+
                 onBackClick = {
                     navController.popBackStack()
                 }

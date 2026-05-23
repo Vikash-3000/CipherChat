@@ -82,4 +82,6 @@ dependencies {
     implementation(libs.firebase.firestore)
 
     implementation(libs.firebase.analytics)
+
+    implementation(libs.androidx.security.crypto)
 }
