@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "116803000270",
+    "project_id": "cipherchat-9877e",
+    "storage_bucket": "cipherchat-9877e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116803000270:android:44cb474dcd5fac59fbfd9f",
+        "android_client_info": {
+          "package_name": "com.example.cipherchat"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRRcPBbPBPfKmGum7pJJJiPJDE4DnqIwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
