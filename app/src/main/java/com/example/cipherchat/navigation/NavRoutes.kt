@@ -11,4 +11,6 @@ object NavRoutes {
     const val CHAT_LIST = "chat_list"
     const val CHAT_SCREEN = "chat_screen"
     const val PROFILE = "profile"
+
+    const val HOME = "home"
 }
