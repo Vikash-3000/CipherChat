@@ -1,5 +1,6 @@
 package com.example.auth.presentation.login
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.auth.domain.usecase.LoginUseCase

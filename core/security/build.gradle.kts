@@ -1,5 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
+    // If using Kotlin Symbol Processing (KSP) - Recommended
+    alias(libs.plugins.hilt)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -33,4 +36,8 @@ dependencies {
 
     implementation(libs.androidx.security.crypto)
     implementation(libs.androidx.biometric)
+
+    implementation(libs.hilt.android)
+
+    ksp(libs.hilt.android.compiler)
 }

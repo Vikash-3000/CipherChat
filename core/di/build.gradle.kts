@@ -38,6 +38,7 @@ dependencies {
     ksp(libs.hilt.android.compiler)
 
     implementation(project(":features:auth"))
+    implementation(project(":core:security"))
 
     implementation(platform(libs.firebase.bom))
 
