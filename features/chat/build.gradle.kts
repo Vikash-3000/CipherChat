@@ -42,6 +42,7 @@ dependencies {
 
     implementation(project(":core:ui"))
     implementation(project(":core:data"))
+    implementation(project(":features:auth"))
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)

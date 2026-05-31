@@ -13,4 +13,8 @@ interface AuthRepository {
         email: String,
         password: String
     ): AuthResult
+
+    fun logout()
+
+    suspend fun isCurrentDeviceValid(): Boolean
 }

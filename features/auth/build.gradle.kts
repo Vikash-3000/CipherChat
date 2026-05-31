@@ -34,6 +34,7 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.compose.runtime)
     implementation(libs.androidx.core.ktx)
+    implementation(libs.google.firebase.firestore)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -46,6 +47,7 @@ dependencies {
     implementation(project(":core:security"))
 
     implementation(libs.firebase.auth)
+    implementation(platform(libs.firebase.bom))
 
     implementation(libs.androidx.hilt.navigation.compose)
 

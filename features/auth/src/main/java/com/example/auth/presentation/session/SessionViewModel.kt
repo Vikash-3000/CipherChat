@@ -1,15 +1,20 @@
 package com.example.auth.presentation.session
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.auth.domain.usecase.CheckDeviceSessionUseCase
 import com.example.security.TokenManager
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SessionViewModel @Inject constructor(
-    private val tokenManager: TokenManager
+    private val tokenManager: TokenManager,
+    private val checkDeviceSessionUseCase:
+    CheckDeviceSessionUseCase
 ) : ViewModel() {
 
     private val _isLoggedIn =
@@ -27,5 +32,21 @@ class SessionViewModel @Inject constructor(
 
         _isLoggedIn.value =
             tokenManager.getToken() != null
+    }
+
+    fun validateDeviceSession(
+        onInvalidSession: () -> Unit
+    ) {
+
+        viewModelScope.launch {
+
+            val isValid =
+                checkDeviceSessionUseCase()
+
+            if (!isValid) {
+
+                onInvalidSession()
+            }
+        }
     }
 }

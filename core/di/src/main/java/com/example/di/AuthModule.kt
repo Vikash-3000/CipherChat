@@ -3,6 +3,7 @@ package com.example.di
 import com.example.auth.data.repository.AuthRepositoryImpl
 import com.example.auth.domain.repository.AuthRepository
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,7 +26,12 @@ object AuthModule {
     fun provideAuthRepository(
         repositoryImpl: AuthRepositoryImpl
     ): AuthRepository {
-
         return repositoryImpl
+    }
+
+    @Provides
+    @Singleton
+    fun provideFirestore(): FirebaseFirestore {
+        return FirebaseFirestore.getInstance()
     }
 }

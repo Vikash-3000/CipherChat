@@ -1,6 +1,7 @@
 package com.example.cipherchat.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -21,6 +22,20 @@ fun RootNavGraph() {
 
     val isLoggedIn by
     sessionViewModel.isLoggedIn.collectAsState()
+
+    LaunchedEffect(Unit) {
+
+        sessionViewModel
+            .validateDeviceSession {
+
+                navController.navigate(
+                    NavRoutes.LOGIN
+                ) {
+
+                    popUpTo(0)
+                }
+            }
+    }
 
     NavHost(
         navController = navController,
@@ -66,7 +81,17 @@ fun RootNavGraph() {
 
         composable(NavRoutes.HOME) {
 
-            HomeScreen()
+            HomeScreen(
+                onLogout = {
+
+                    navController.navigate(
+                        NavRoutes.LOGIN
+                    ) {
+
+                        popUpTo(0)
+                    }
+                }
+            )
         }
     }
 }
